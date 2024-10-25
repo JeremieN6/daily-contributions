@@ -2,7 +2,8 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '0 14 * * *'  # Exécute tous les jours à 14h UTC
+    - cron: '0 18 * * *'  # Exécute tous les jours à 18h UTC (Donc 19h en Fra nce car : France(hiver) = UTC+1)
+      workflow_dispatch:  # Permet le déclenchement manuel
 
 jobs:
   commit:
@@ -26,8 +27,8 @@ jobs:
 
       - name: Configurer Git
         run: |
-          git config --global user.name "TonNom"
-          git config --global user.email "tonemail@example.com"
+          git config --global user.name "${{ secrets.GIT_USER }}"
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
 
       - name: Commit et Push
         run: |
