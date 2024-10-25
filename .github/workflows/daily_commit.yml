@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '0 17 * * *'  # Exécute tous les jours à 17h UTC (Donc 18h en France car : France(Heure Hiver) = UTC+1 et France(Heure Été) = UTC+2)
+    - cron: '0 17 * * *'  # Exécute tous les jours à 17h UTC (Donc 18h en France car : France (Heure Hiver) = UTC+1 et France (Heure Été) = UTC+2)
   workflow_dispatch:  # Permet le déclenchement manuel
 
 jobs:
